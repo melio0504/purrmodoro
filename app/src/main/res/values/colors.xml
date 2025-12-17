@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Soft Pastel Colors for Purrmodoro -->
+    <color name="cream">#FFF5E6D3</color>
+    <color name="beige">#A1887F</color>
+    <color name="deep_slate">#4A5B6D</color>
+    <color name="deep_pink">#B35F68</color>
+    <color name="mint">#2E7D32</color>
+    <color name="soft_gray">#FFE8E8E8</color>
+    <color name="warm_white">#FFFFF9F0</color>
+    <color name="dark_brown">#FF8B6F5E</color>
 </resources>
