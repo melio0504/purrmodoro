@@ -29,4 +29,7 @@
     <string name="session_complete_title">Session Complete!</string>
     <string name="session_complete_message">Your focus session has finished. The cat is proud of you!</string>
     <string name="ok_got_it">OK, got it!</string>
+    <string name="_15_00">15:00</string>
+    <string name="playing_cat">Playing cat</string>
+    <string name="enjoy_a_longer_playful_break">Enjoy a longer, playful break!</string>
 </resources>
