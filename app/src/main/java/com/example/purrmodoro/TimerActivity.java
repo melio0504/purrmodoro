@@ -4,12 +4,16 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -26,6 +30,7 @@ public class TimerActivity extends AppCompatActivity {
     private long timeLeftInMillis = FOCUS_DURATION;
     private boolean isRunning = false;
     private boolean isPaused = false;
+    private MediaPlayer alarmPlayer;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -127,11 +132,70 @@ public class TimerActivity extends AppCompatActivity {
                 btnStart.setEnabled(true);
                 btnPause.setEnabled(false);
                 statusText.setText("Session complete! Great job! Yipeeee!");
-                
+
+                // Play alarm sound
+                playAlarmSound();
+
+                // Show completion dialog
+                showSessionCompleteDialog();
+
                 // Increment progress
                 ProgressHelper.incrementCompletedSessions(TimerActivity.this);
             }
         }.start();
+    }
+
+    private void playAlarmSound() {
+        // Release any existing player first
+        if (alarmPlayer != null) {
+            if (alarmPlayer.isPlaying()) {
+                alarmPlayer.stop();
+            }
+            alarmPlayer.release();
+            alarmPlayer = null;
+        }
+
+        alarmPlayer = MediaPlayer.create(this, R.raw.alarm);
+        if (alarmPlayer != null) {
+            alarmPlayer.setOnCompletionListener(mp -> {
+                mp.release();
+                alarmPlayer = null;
+            });
+            alarmPlayer.start();
+        }
+    }
+
+    private void stopAlarmIfPlaying() {
+        if (alarmPlayer != null) {
+            if (alarmPlayer.isPlaying()) {
+                alarmPlayer.stop();
+            }
+            alarmPlayer.release();
+            alarmPlayer = null;
+        }
+    }
+
+    private void showSessionCompleteDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_session_complete, null);
+        builder.setView(dialogView);
+
+        Button btnOk = dialogView.findViewById(R.id.dialogOkButton);
+        btnOk.setOnClickListener(v -> {
+            // Stop alarm when user acknowledges the dialog
+            stopAlarmIfPlaying();
+            // Close the dialog
+            AlertDialog alertDialog = (AlertDialog) btnOk.getTag();
+            if (alertDialog != null) {
+                alertDialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        // Store dialog reference in the button tag so we can dismiss it in the click listener
+        btnOk.setTag(dialog);
+        dialog.show();
     }
 
     private void updateTimerDisplay() {
@@ -147,6 +211,7 @@ public class TimerActivity extends AppCompatActivity {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
+        stopAlarmIfPlaying();
     }
 }
 
