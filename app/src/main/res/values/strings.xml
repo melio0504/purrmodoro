@@ -26,4 +26,7 @@
     <string name="time_to_stretch_with_the_cat">Time to stretch with the cat!</string>
     <string name="cat_studying_gif">Cat studying gif</string>
     <string name="_0">0</string>
+    <string name="session_complete_title">Session Complete!</string>
+    <string name="session_complete_message">Your focus session has finished. The cat is proud of you!</string>
+    <string name="ok_got_it">OK, got it!</string>
 </resources>
