@@ -28,7 +28,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/long_break_cat"
-        android:contentDescription="Playing cat"
+        android:contentDescription="@string/playing_cat"
         app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:id="@+id/timerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="15:00"
+        android:text="@string/_15_00"
         android:textSize="64sp"
         android:textColor="@color/dark_brown"
         android:textStyle="bold"
@@ -52,7 +52,7 @@
         android:id="@+id/statusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enjoy a longer, playful break!"
+        android:text="@string/enjoy_a_longer_playful_break"
         android:textSize="16sp"
         android:fontFamily="@font/patrick_hand"
         android:textColor="@color/dark_brown"
@@ -79,7 +79,7 @@
             android:text="@string/start"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/deep_pink"
+            android:backgroundTint="@color/mint"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:layout_marginEnd="16dp" />
@@ -91,7 +91,7 @@
             android:text="@string/pause"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/mint"
+            android:backgroundTint="@color/deep_slate"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:layout_marginEnd="16dp" />
@@ -103,7 +103,7 @@
             android:text="@string/stop"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/deep_slate"
+            android:backgroundTint="@color/deep_pink"
             android:paddingStart="24dp"
             android:paddingEnd="24dp" />
     </LinearLayout>

@@ -79,7 +79,7 @@
             android:text="@string/start"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/deep_pink"
+            android:backgroundTint="@color/mint"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:layout_marginEnd="16dp" />
@@ -91,7 +91,7 @@
             android:text="@string/pause"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/mint"
+            android:backgroundTint="@color/deep_slate"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:layout_marginEnd="16dp" />
@@ -103,7 +103,7 @@
             android:text="@string/stop"
             android:textSize="22sp"
             android:fontFamily="@font/patrick_hand"
-            android:backgroundTint="@color/deep_slate"
+            android:backgroundTint="@color/deep_pink"
             android:paddingStart="24dp"
             android:paddingEnd="24dp" />
     </LinearLayout>
