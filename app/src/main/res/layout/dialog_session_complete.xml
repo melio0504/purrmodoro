@@ -2,62 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="24dp"
     android:background="@color/warm_white">
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/patrick_hand"
-        android:text="@string/app_name"
-        android:textColor="@color/dark_brown"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/authorText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/patrick_hand"
-        android:text="@string/by_romelio_teodoro_n3_3bsit"
-        android:textColor="@color/dark_brown"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
-
-    <ImageView
-        android:id="@+id/homeCatImage"
-        android:layout_width="176dp"
-        android:layout_height="178dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/cat_studying"
-        android:src="@drawable/cat_studying"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/authorText" />
 
     <TextView
         android:id="@+id/dialogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="@string/session_complete_title"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/dark_brown"
         android:fontFamily="@font/patrick_hand"
-        app:layout_constraintTop_toBottomOf="@id/homeCatImage"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />        android:textColor="@color/dark_brown"
+
 
     <TextView
         android:id="@+id/dialogMessage"
@@ -68,7 +29,6 @@
         android:textSize="18sp"
         android:textColor="@color/dark_brown"
         android:fontFamily="@font/patrick_hand"
-        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/dialogTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -89,3 +49,4 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
